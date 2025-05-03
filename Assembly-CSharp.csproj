@@ -179,6 +179,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\SetSpeed.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\AddForce.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\CharacterController\GetCenter.cs" />
+    <Compile Include="Assets\Scripts\BehaviorTree\CheckActivities.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SharedTransformToGameObject.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetRotation.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetCenter.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\String\GetLength.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\CharacterController\GetHeight.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Vector2\MoveTowards.cs" />
+    <Compile Include="Assets\Scripts\SmartObjects\Activity.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Input\GetKey.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Variables\SharedLayerMask.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetMass.cs" />
@@ -525,6 +527,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Physics\Raycast.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\IsSleeping.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\CharacterController\GetSlopeLimit.cs" />
+    <Compile Include="Assets\Scripts\SmartObjects\SmartObject.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetDirection.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\MovePosition.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetPosition.cs" />
@@ -1513,6 +1516,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1545,6 +1552,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
       <Private>False</Private>
@@ -1567,6 +1578,10 @@
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
@@ -1607,6 +1622,10 @@
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">

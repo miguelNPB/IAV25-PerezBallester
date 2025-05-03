@@ -21,9 +21,24 @@ Por lo que sirve para abstraer la capa entre objetos del entorno y comportamient
 
 #### Elementos del entorno
 
+Cada actividad dura un cierto tiempo y restaura una cantidad de su barra de necesidad correspondiente. Una vez se empieza con una actividad, el sim tendrá que terminarla.
+Las estaciones de respuesto de necesidades son Smart Objects que contienen varias actividades, el sim elegirá la estación en caso de necesitar algo de ella y una vez allí, elegirá la que más le beneficie.
+
 #### Sims (NPCs)
 
-Cada sim tiene 3 necesidades
+Cada sim tiene 4 necesidades, comer, ir al baño, socializar y dormir.
+Para cada sim distinto las necesidades bajan a ritmos distintos, cuando una necesidad baja del 75% la necesidad de ir a reponerla aumenta a 1, cuando baja del 50% al 2, y cuando baja del 25% al 3. 
+El sim, si no está realizando ninguna tarea y está una estación de repuesto de necesidad disponible, la reserva y va hacia ella, hace la tarea y vuelve a su rutina.
+En caso de no tener ninguna necesidad por debajo del 75%, cambia al modo ocio, donde se va a su estación favorita personal a pasar el rato, por ejemplo, para Agatha, es pintar en un lienzo.
+En caso de que un sim no pueda reponer su necesidad con mayor prioridad, pasa a la siguiente con menos prioridad, y en caso de no poder reponer ninguna, va a su estación de ocio.
+En el caso de tener como mayor necesidad socializar, el sim buscará a otro sim que tenga como mayor prioridad socializar, si no lo encuentra, ignorará la necesidad hasta que se pueda cumplir, y una vez lo encuentra, van juntos a una estación de socializar.
+
+#### Interacción del jugador
+
+El jugador puede clicar sobre cualquier sim para ver sus estadísticas y nombre.
+- Mover: Al darle al 1 en el teclado, se activa el modo movimiento, donde puedes mover manualmente a un sim y ponerle a hacer cualquier actividad.
+- Rayo: Al darle al 2 en el teclado, se activa el modo rayo, que donde clica el jugador cae un rayo que asusta a los sims cercanos, y en caso de darle a una estación de repuesto de necesidades la deshabilita durante un tiempo.
+- Oro: Al darle al 3 en el teclado, se activa el modo colocar oro, que coloca un lingote de oro en el mapa que distrae al sim más cercano acercandolo a investigarlo durante cierto tiempo. Luego desaparece.
 
 ## Conclusiones
 

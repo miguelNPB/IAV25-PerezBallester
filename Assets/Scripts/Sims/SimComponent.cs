@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SimComponent : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class SimComponent : MonoBehaviour
 
 
     [SerializeField] private DiamondComponent diamond;
+
+    private Animator animator;
+    private NavMeshAgent animation;
     public void toggleDiamondAnimation()
     {
         diamond.ToggleSelected();
@@ -21,12 +25,19 @@ public class SimComponent : MonoBehaviour
     {
         UIManager.Instance.ChangeSimUI(spriteFace, name, hunger, bladder, social, sleep);
     }
+
+    private void UpdateAnimations()
+    {
+        //if ()
+    }
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
         diamond.updateHappy(Mathf.Min(hunger, bladder, social, sleep));
+
+
     }
 }

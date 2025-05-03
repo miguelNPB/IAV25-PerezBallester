@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
@@ -7,16 +5,28 @@ using BehaviorDesigner.Runtime.Tasks;
 public class GetNecesityValues : Action
 {
     public SharedGameObject simGameObject;
-    public SharedFloat hunger;
-    public SharedFloat bladder;
-    public SharedFloat social;
-    public SharedFloat sleep;
+    public SharedInt hungerPriority;
+    public SharedInt bladderPriority;
+    public SharedInt socialPriority;
+    public SharedInt sleepPriority;
+
+    private int getPriorityFromValue(float value)
+    {
+        if (value > 75)
+            return 0;
+        else if (value > 50)
+            return 1;
+        else if (value > 25)
+            return 2;
+        else
+            return 3;
+    }
     public override void OnStart()
     {
         SimComponent sim = simGameObject.Value.GetComponent<SimComponent>();
-        hunger.SetValue(sim.hunger);
-        bladder.SetValue(sim.hunger);
-        social.SetValue(sim.hunger);
-        sleep.SetValue(sim.sleep);
+        hungerPriority.SetValue(getPriorityFromValue(sim.hunger));
+        bladderPriority.SetValue(getPriorityFromValue(sim.bladder));
+        socialPriority.SetValue(getPriorityFromValue(sim.social));
+        sleepPriority.SetValue(getPriorityFromValue(sim.sleep));
     }
 }
