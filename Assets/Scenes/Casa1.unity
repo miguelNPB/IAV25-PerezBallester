@@ -932,6 +932,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1786211689371011540, guid: 796e32cd1010d3b4a934bd873c9246c7, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786211689371011540, guid: 796e32cd1010d3b4a934bd873c9246c7, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: b33631dde9d62ef46be12a54ad9332b8, type: 2}
     - target: {fileID: 8468767872854852697, guid: 796e32cd1010d3b4a934bd873c9246c7, type: 3}
       propertyPath: m_Name
       value: Closet
@@ -9004,6 +9012,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kitchen
       objectReference: {fileID: 0}
+    - target: {fileID: 2982926897403094195, guid: 3ef71c61a4b7a584ab19647cf6f6946e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270358126975562618, guid: 3ef71c61a4b7a584ab19647cf6f6946e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270358126975562618, guid: 3ef71c61a4b7a584ab19647cf6f6946e, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: b33631dde9d62ef46be12a54ad9332b8, type: 2}
     - target: {fileID: 7189223068364513839, guid: 3ef71c61a4b7a584ab19647cf6f6946e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -11090,6 +11110,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 968395125}
     m_Modifications:
     - target: {fileID: 1003608053728051741, guid: 9cdc8ae9fd986a64e8cc6eb49e2abe82, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1003608053728051741, guid: 9cdc8ae9fd986a64e8cc6eb49e2abe82, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dd3b37701cc034246a233f6d47a46f91, type: 2}
@@ -11097,6 +11121,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: d6726bb7e3c5cea429efa04d07f6ede7, type: 2}
+    - target: {fileID: 1003608053728051741, guid: 9cdc8ae9fd986a64e8cc6eb49e2abe82, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: b33631dde9d62ef46be12a54ad9332b8, type: 2}
     - target: {fileID: 2064176005005399291, guid: 9cdc8ae9fd986a64e8cc6eb49e2abe82, type: 3}
       propertyPath: m_Name
       value: Door (2)

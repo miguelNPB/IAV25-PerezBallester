@@ -77,10 +77,17 @@ public class PlayerActions : MonoBehaviour
     }
     private void HandleSelectSim()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 100f))
+        {
+
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            
             if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Player"), QueryTriggerInteraction.Collide))
             {
                 selectedSim = hit.collider.gameObject;
