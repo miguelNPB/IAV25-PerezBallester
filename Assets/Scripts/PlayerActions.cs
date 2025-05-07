@@ -45,7 +45,11 @@ public class PlayerActions : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (mode == Mode.Move)
+            {
                 mode = Mode.None;
+                if (selectedSim != null)
+                    selectedSimComponent.playerMoving = false;
+            }
             else
                 mode = Mode.Move;
         }
@@ -63,8 +67,8 @@ public class PlayerActions : MonoBehaviour
             else
                 mode = Mode.Thunder;
         }
-        else if (Input.GetMouseButtonDown(1))
-            mode = Mode.None;
+        //else if (Input.GetMouseButtonDown(1))
+        //    mode = Mode.None;
 
         if (oldMode != mode)
         {
@@ -92,14 +96,19 @@ public class PlayerActions : MonoBehaviour
         }
     }
     private void HandleMoveSim()
-    { 
+    {
         if (Input.GetMouseButtonDown(0) && selectedSim != null)
         {
+            if (!selectedSimComponent.playerMoving)
+            {
+                selectedSimComponent.playerMoving = true;
+                selectedSim.GetComponent<SimPersonality>().ExitFunMode();
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Collide))
             {
-                Debug.Log("nasi");
                 selectedSimNavAgent.SetDestination(hit.point);
             }
         }
