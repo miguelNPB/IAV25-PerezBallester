@@ -66,16 +66,16 @@ public class SimComponent : MonoBehaviour
         switch (n)
         {
             case Necessity.HUNGER:
-                hunger += ammount;
+                hunger = Mathf.Min(hunger + ammount, 1);
                 break;
             case Necessity.BLADDER:
-                bladder += ammount;
+                bladder = Mathf.Min(bladder + ammount, 1);
                 break;
             case Necessity.SOCIAL:
-                social += ammount;
+                social = Mathf.Min(social + ammount, 1);
                 break;
             case Necessity.SLEEP:
-                sleep += ammount;
+                sleep = Mathf.Min(sleep + ammount, 1);
                 break;
         }
     }

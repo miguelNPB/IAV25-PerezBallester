@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class SmartObject : MonoBehaviour
 {
-    [SerializeField]protected List<Activity> activities;
+    [SerializeField] protected List<Activity> activities;
     protected Activity runningActivity;
     protected bool occupied;
+
     public bool IsTaskAvailable()
     {
         return occupied;

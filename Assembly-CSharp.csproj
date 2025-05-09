@@ -105,8 +105,8 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Timeline\Pause.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Light\SetIntensity.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Light\GetColor.cs" />
-    <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedObject.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\ExternalBehaviorTree.cs" />
+    <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedObject.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Transform\GetUpVector.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\GameObject\SetActive.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Timeline\Stop.cs" />
@@ -422,8 +422,8 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\AddForceAtPosition.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Light\SetCookieSize.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedBool.cs" />
-    <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\SetAngularDrag.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer Samples\RTS\Scripts\Tasks\NextAttackPosition.cs" />
+    <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\SetAngularDrag.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\AddForce.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SharedTransformToGameObject.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetRotation.cs" />
@@ -466,8 +466,8 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Variables\SharedVector3Int.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedInt.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Behaviour\GetEnabled.cs" />
-    <Compile Include="Assets\BehaviorDesigner\Behavior Designer Samples\CTF\Scripts\Tasks\WithinSight.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Variables\SharedBehaviour.cs" />
+    <Compile Include="Assets\BehaviorDesigner\Behavior Designer Samples\CTF\Scripts\Tasks\WithinSight.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Animator\Play.cs" />
     <Compile Include="Assets\Scripts\Sims\ExternalAnimationController.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Collider\SetEnabled.cs" />
@@ -1538,6 +1538,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.ProBuilder">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
       <Private>False</Private>
@@ -1554,10 +1558,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1570,10 +1570,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1584,6 +1580,10 @@
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
@@ -1642,6 +1642,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1656,10 +1660,6 @@
     </Reference>
     <Reference Include="Unity.AI.Navigation.Updater">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">

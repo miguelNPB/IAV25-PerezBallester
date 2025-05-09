@@ -13,8 +13,11 @@ public class PlayerActions : MonoBehaviour
     private GameObject selectedSim;
     private SimComponent selectedSimComponent;
     private NavMeshAgent selectedSimNavAgent;
+
+    private GameObject outlinedGameObject;
     void Start()
     {
+        outlinedGameObject = null;
     }
 
     void Update()
@@ -77,24 +80,19 @@ public class PlayerActions : MonoBehaviour
     }
     private void HandleSelectSim()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 100f))
-        {
-
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
-            
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Player"), QueryTriggerInteraction.Collide))
             {
                 selectedSim = hit.collider.gameObject;
                 selectedSimComponent = selectedSim.GetComponent<SimComponent>();
                 selectedSimNavAgent = selectedSim.GetComponent<NavMeshAgent>();
                 selectedSimComponent.toggleDiamondAnimation();
-            } else if (mode == Mode.None && selectedSim != null)
+            }
+            else if (mode == Mode.None && selectedSim != null)
             {
                 selectedSimComponent.toggleDiamondAnimation();
                 UIManager.Instance.HideSimUI();
@@ -104,7 +102,36 @@ public class PlayerActions : MonoBehaviour
     }
     private void HandleMoveSim()
     {
-        if (Input.GetMouseButtonDown(0) && selectedSim != null)
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        // seleccionar smartObject
+        if (Physics.Raycast(ray, out hit, 100f) && hit.collider.gameObject.tag == "SmartObject")
+        {
+            if (outlinedGameObject == null)
+            {
+                outlinedGameObject = hit.collider.gameObject.transform.parent.gameObject;
+
+                for (int i = 0; i < outlinedGameObject.transform.childCount; i++)
+                {
+                    outlinedGameObject.transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("OutlinedObject");
+                }
+            }
+
+        }
+        else if (outlinedGameObject != null)
+        {
+            for (int i = 0; i < outlinedGameObject.transform.childCount; i++)
+            {
+                outlinedGameObject.transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("Default");
+            }
+
+            outlinedGameObject = null;
+        }
+
+
+        // mover
+        if (Input.GetMouseButtonDown(0) && selectedSim != null && selectedSimComponent.currentActivity == null)
         {
             if (!selectedSimComponent.playerMoving)
             {
@@ -112,11 +139,18 @@ public class PlayerActions : MonoBehaviour
                 selectedSim.GetComponent<SimPersonality>().ExitFunMode();
             }
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Collide))
+            if (outlinedGameObject == null && Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Collide))
             {
                 selectedSimNavAgent.SetDestination(hit.point);
+            }
+            else if (outlinedGameObject != null)
+            {
+                selectedSim.GetComponent<SimPersonality>().ExitFunMode();
+                Activity a = outlinedGameObject.GetComponent<SmartObject>().GetBestActivity(selectedSimComponent);
+                a.reserveActivity(selectedSimComponent);
+                selectedSimComponent.currentActivity = a;
+
+                selectedSim = null;
             }
         }
     }

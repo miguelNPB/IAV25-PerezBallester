@@ -42,6 +42,9 @@ public class CheckSmartObjectGroup : Action
         ActivityStatus aStatus = sim.currentActivity.getActivityStatus();
         runningActivity = aStatus != ActivityStatus.CLEAR;
 
+        if (aStatus == ActivityStatus.CLEAR)
+            sim.currentActivity = null;
+
         return TaskStatus.Running;  
     }
 }

@@ -85,28 +85,28 @@ public class SimPersonality : MonoBehaviour
         hungerTimer -= Time.deltaTime;
         if (hungerTimer < 0)
         {
-            sim.hunger -= 0.01f;
+            sim.hunger = Mathf.Max(0, sim.hunger - 0.01f);
             hungerTimer = hungerDepletionTime;
         }
 
         bladderTimer -= Time.deltaTime;
         if (bladderTimer < 0)
         {
-            sim.bladder -= 0.01f;
+            sim.bladder = Mathf.Max(0, sim.bladder - 0.01f);
             bladderTimer = bladderDepletionTime;
         }
 
         socialTimer -= Time.deltaTime;
         if (socialTimer < 0)
         {
-            sim.social -= 0.01f;
+            sim.social = Mathf.Max(0, sim.social - 0.01f);
             socialTimer = socialDepletionTime;
         }
 
         sleepTimer -= Time.deltaTime;
         if (sleepTimer < 0)
         {
-            sim.sleep -= 0.01f;
+            sim.sleep = Mathf.Max(0, sim.sleep - 0.01f);
             sleepTimer = sleepDepletionTime;
         }
     }

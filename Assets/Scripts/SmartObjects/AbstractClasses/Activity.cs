@@ -110,6 +110,7 @@ public class Activity : MonoBehaviour
                     particleSystem.Stop();
 
                 sim.GetComponent<NavMeshAgent>().updateRotation = true;
+                
             }
         }
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sim
   - Floor
+  - SmartObject
   layers:
   - Default
   - TransparentFX
