@@ -156,13 +156,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af81585a50e2234b95656a6a166a505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  necessity: 0
-  restore: 1
-  activityTime: 0
+  necessity: 3
+  restore: 0.3
+  activityTime: 10
   animation: {fileID: 0}
-  audioSFX: {fileID: 0}
+  audioSFX: {fileID: 8300000, guid: 5f10b43c2eff868498145dd127d6a2b1, type: 3}
   particleSystem: {fileID: 0}
+  toggleGameObjects: []
   activityStatus: 0
+  timer: 0
 --- !u!82 &4063773113177933821
 AudioSource:
   m_ObjectHideFlags: 0
@@ -174,7 +176,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -184,9 +186,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 7
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -194,23 +196,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.14285715
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.038664695
+      outSlope: -0.038664695
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.2957625
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

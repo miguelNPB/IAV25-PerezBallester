@@ -16,7 +16,7 @@ public class CheckSimAutoMode : Action
 
     public override TaskStatus OnUpdate()
     {
-        if (sim.playerMoving)
+        if (sim.playerMoving || sim.distracted)
             return TaskStatus.Failure;
         else
             return TaskStatus.Success;

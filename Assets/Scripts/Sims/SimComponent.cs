@@ -6,6 +6,7 @@ public enum Necessity { HUNGER, BLADDER, SOCIAL ,SLEEP };
 public class SimComponent : MonoBehaviour
 {
     [SerializeField] private DiamondComponent diamond;
+    [SerializeField] private GameObject thunderedParticleSystem;
     public Sprite spriteFace;
     public string name;
     public float hunger = 1;
@@ -16,14 +17,23 @@ public class SimComponent : MonoBehaviour
     [HideInInspector]
     public Activity currentActivity;
     [HideInInspector]
+    public Activity queuedActivity;
+    [HideInInspector]
     public bool playerMoving;
-  
+    [HideInInspector]
+    public bool distracted;
+    private bool thundered;
+    private float thunderTimer;
+    [HideInInspector]
+    public bool enableAutoModeOnActivityDone;
+
+
     private Animator animator;
     private NavMeshAgent navMeshAgent;
 
-    public void toggleDiamondAnimation()
+    public void toggleDiamondAnimation(bool value)
     {
-        diamond.ToggleSelected();
+        diamond.ToggleSelected(value);
     }
     public void SendSimToUI()
     {
@@ -80,16 +90,39 @@ public class SimComponent : MonoBehaviour
         }
     }
 
+    public void Thunder(float time)
+    {
+        thundered = true;
+        thunderTimer = time;
+        animator.SetBool("Thundered", true);
+        navMeshAgent.velocity = new Vector3(0, 0, 0);
+        navMeshAgent.SetDestination(transform.position);
+        thunderedParticleSystem.SetActive(true);
+    }
+
     void Start()
     {
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         playerMoving = false;
+        enableAutoModeOnActivityDone = false;
+        distracted = false;
+        thundered = false;
     }
     void Update()
     {
-        diamond.updateHappy(Mathf.Min(hunger, bladder, social, sleep));
+        diamond.UpdateHappy(Mathf.Min(hunger, bladder, social, sleep));
         animator.SetBool("Walking", navMeshAgent.velocity.magnitude > 0.1f);
 
+        if (thundered)
+        {
+            thunderTimer -= Time.deltaTime;
+            if (thunderTimer < 0)
+            {
+                thunderedParticleSystem.SetActive(false);
+                animator.SetBool("Thundered", false);
+                thundered = false;
+            }
+        }
     }
 }
