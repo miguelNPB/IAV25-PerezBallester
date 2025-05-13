@@ -3,44 +3,70 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     [Header("Configuración")]
-    [SerializeField] private float dragSpeed = 2f;       // Velocidad de arrastre
+    [SerializeField] private float movementSpeed = 2f;       // Velocidad de arrastre
+    [SerializeField] private float rotationSpeed = 2f;       // Velocidad de rotacion
     [SerializeField] private float minZoom = 5f;         // Zoom mínimo
     [SerializeField] private float maxZoom = 20f;        // Zoom máximo
     [SerializeField] private float zoomSpeed = 5f;       // Velocidad del zoom
 
-    private Vector3 dragOrigin;                          // Punto inicial del arrastre
-    private Camera cam;                                  // Referencia a la cámara
+    private Camera cam;
+    private Vector3 lastMousePosition;
 
     private void Awake()
     {
         cam = Camera.main;
-        dragOrigin = Vector3.zero;
     }
 
     private void Update()
     {
-        HandleDragMovement();
+        HandleMoveCamera();
+        HandleRotateCamera();
         HandleZoom();
     }
 
-    // Maneja el movimiento al arrastrar con el botón derecho del ratón
-    private void HandleDragMovement()
+    private void HandleMoveCamera()
     {
-        if (Input.GetMouseButtonDown(1)) // botón derecho presionado por primera vez
+        Vector3 direction = Vector3.zero;
+        if (Input.GetKey(KeyCode.W))
         {
-            dragOrigin = Input.mousePosition;
+            direction += transform.forward;
+        } 
+        else if (Input.GetKey(KeyCode.S))
+        {
+            direction -= transform.forward;
         }
 
-        if (Input.GetMouseButton(1)) // botón derecho mantenido
+        if (Input.GetKey(KeyCode.A))
         {
-            Vector3 difference = (dragOrigin - Input.mousePosition) * dragSpeed * Time.deltaTime;
+            direction -= transform.right;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            direction += transform.right;
+        }
 
-            difference.z = difference.y;
-            difference.y = 0;
+        transform.position += (direction * movementSpeed * Time.deltaTime);
+    }
 
-            transform.position += difference;
+    private void HandleRotateCamera()
+    {
+        
+        if (Input.GetMouseButtonDown(1))
+        {
+            lastMousePosition = Input.mousePosition;
+        } 
 
-            dragOrigin = Input.mousePosition; // actualizar para el siguiente frame
+        if (Input.GetMouseButton(1))
+        {
+            Vector3 delta = Input.mousePosition - lastMousePosition;
+
+            float yaw = delta.x * rotationSpeed * Time.deltaTime;
+            float pitch = -delta.y * rotationSpeed * Time.deltaTime;
+
+            transform.Rotate(Vector3.up, yaw, Space.World); // horizontal
+            //transform.Rotate(Vector3.right, pitch, Space.Self); // vertical
+
+            lastMousePosition = Input.mousePosition;
         }
     }
 

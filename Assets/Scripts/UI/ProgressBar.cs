@@ -64,11 +64,4 @@ public class ProgressBar : MonoBehaviour
             }
         }
     }
-
-    // BILLBOARD
-    private void LateUpdate()
-    {
-        Vector3 dir = Camera.main.transform.position - transform.position;
-        transform.forward = dir;
-    }
 }

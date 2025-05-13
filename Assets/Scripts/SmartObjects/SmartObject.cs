@@ -7,17 +7,17 @@ using UnityEngine;
 public class SmartObject : MonoBehaviour
 {
     public List<Activity> activities;
+    [SerializeField] private GameObject blockedSign;
     protected Activity runningActivity;
     [HideInInspector]
     public bool occupied;
+    [HideInInspector]
+    public bool thundered;
+    private float thunderTimer;
 
-    public bool IsTaskAvailable()
-    {
-        return occupied;
-    }
     public Activity GetBestActivity(SimComponent sim)
     {
-        if (occupied)
+        if (occupied || thundered)
             return null;
 
         Activity best = null;
@@ -44,8 +44,32 @@ public class SmartObject : MonoBehaviour
         occupied = false;
     }
 
+    public void Thunder(float time)
+    {
+        thundered = true;
+        thunderTimer = time;
+        blockedSign.SetActive(true);
+    }
+    private void Dethunder()
+    {
+        thundered = false;
+        blockedSign.SetActive(false);
+    }
+
     private void Start()
     {
         occupied = false;
+        thundered = false;
+        blockedSign.SetActive(false);
+    }
+    public void Update()
+    {
+        if (thundered)
+        {
+            thunderTimer -= Time.deltaTime;
+
+            if (thunderTimer < 0)
+                Dethunder();
+        }
     }
 }

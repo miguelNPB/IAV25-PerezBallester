@@ -226,6 +226,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Input\IsMouseDown.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Actions\StackedAction.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\SphereCollider\SetCenter.cs" />
+    <Compile Include="Assets\Scripts\UI\Billboard.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Vector2\Normalize.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Object Drawers\FloatSliderAttribute.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\SetAcceleration.cs" />
@@ -319,6 +320,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Transform\Rotate.cs" />
     <Compile Include="Assets\Scripts\Sims\SimComponent.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer Samples\Common\Seek.cs" />
+    <Compile Include="Assets\Scripts\UI\ToggleObjects.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Animator\SetLayerWeight.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer Samples\RTS\Scripts\Tasks\NextGoldFieldTarget.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Light\GetCookieSize.cs" />
@@ -440,6 +442,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Decorators\TaskGuard.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer Samples\RTS\Scripts\Tasks\IsResourceAvailable.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Conditionals\Reflection\CompareFieldValue.cs" />
+    <Compile Include="Assets\Scripts\BehaviorTree\CheckGold.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Quaternion\Slerp.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\AddForceAtPosition.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\GetIsStopped.cs" />
@@ -474,6 +477,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Variables\SharedBehaviour.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer Samples\CTF\Scripts\Tasks\WithinSight.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Animator\Play.cs" />
+    <Compile Include="Assets\Scripts\Other\GoldComponent.cs" />
     <Compile Include="Assets\Scripts\Sims\ExternalAnimationController.cs" />
     <Compile Include="Assets\Scripts\BehaviorTree\CheckSharedSmartObjectGroup.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Collider\SetEnabled.cs" />

@@ -65,6 +65,10 @@ public class Activity : MonoBehaviour
         progressBar.SetupProgressBar();
     }
 
+    public virtual void RestoreNavMeshRoute()
+    {
+        sim.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+    }
     public virtual ActivityStatus getActivityStatus()
     {
         return activityStatus;

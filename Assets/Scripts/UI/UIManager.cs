@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private List<TMP_Text> smartObjectActivitytimes;
     [SerializeField] private List<TMP_Text> smartObjectActivityrestores;
     [SerializeField] private List<Image> smartObjectActivityimages;
+    [Header("Volver al menu prinicpal")]
+    [SerializeField] private GameObject escapePanel;
 
     private Animator animator;
     private AudioSource audioSource;
@@ -130,6 +132,17 @@ public class UIManager : MonoBehaviour
         }
         
     }
+
+    public void OpenEscapeButton()
+    {
+        escapePanel.SetActive(true);
+    }
+
+    public void CloseEscapeButton()
+    {
+        escapePanel.SetActive(false);
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -147,5 +160,6 @@ public class UIManager : MonoBehaviour
         HideUI();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        escapePanel.SetActive(false);
     }
 }

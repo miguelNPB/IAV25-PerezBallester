@@ -30,45 +30,45 @@ public class SimPersonality : MonoBehaviour
     private float timer;
     public void UpdateFunMode()
     {
-        if (selectedOcioSpot == null)
+        if (!sim.distracted)
         {
-            Transform oldSelectedSpot = selectedOcioSpot;
-            while (selectedOcioSpot == oldSelectedSpot)
-                selectedOcioSpot = ocioSpots[Random.Range(0, ocioSpots.Count)];
+            if (selectedOcioSpot == null)
+            {
+                Transform oldSelectedSpot = selectedOcioSpot;
+                while (selectedOcioSpot == oldSelectedSpot)
+                    selectedOcioSpot = ocioSpots[Random.Range(0, ocioSpots.Count)];
 
-            navMeshAgent.SetDestination(selectedOcioSpot.position);
+                navMeshAgent.SetDestination(selectedOcioSpot.position);
+            }
+            else if (!playingAnimation && Vector3.Distance(selectedOcioSpot.position, sim.transform.position) < 0.5f)
+            {
+                playingAnimation = true;
+                timer = timeInSpot;
+                // tiene una necesidad baja pero no puede suplirla
+                if (sim.hunger < 0.75 || sim.bladder < 0.75 || sim.social < 0.75 || sim.sleep < 0.75)
+                {
+                    simExternalAnimator.PlayExternalAnimation(stressedAnimation);
+                    audioSource.Stop();
+                    //audioSource.clip = stressedSFX;
+                    //audioSource.Play();
+                }
+                else
+                {
+                    simExternalAnimator.PlayExternalAnimation(customOcioAnimation);
+                    audioSource.clip = customOcioSFX;
+                    audioSource.Play();
+                }
+            } 
+            else if (playingAnimation)
+            {
+                timer -= Time.deltaTime;
+
+                if (timer < 0)
+                {
+                    ExitFunMode();
+                }
+            }
         }
-        else if (!playingAnimation && Vector3.Distance(selectedOcioSpot.position, sim.transform.position) < 0.5f)
-        {
-            playingAnimation = true;
-            timer = timeInSpot;
-            // tiene una necesidad baja pero no puede suplirla
-            if (sim.hunger < 0.75 || sim.bladder < 0.75 || sim.social < 0.75 || sim.sleep < 0.75)
-            {
-                simExternalAnimator.PlayExternalAnimation(stressedAnimation);
-                audioSource.Stop();
-                //audioSource.clip = stressedSFX;
-                //audioSource.Play();
-            }
-            else
-            {
-                simExternalAnimator.PlayExternalAnimation(customOcioAnimation);
-                audioSource.clip = customOcioSFX;
-                audioSource.Play();
-            }
-        } 
-        else if (playingAnimation)
-        {
-            timer -= Time.deltaTime;
-
-            if (timer < 0)
-            {
-                ExitFunMode();
-            }
-        }
-
-        
-
     }
     public void ExitFunMode()
     {

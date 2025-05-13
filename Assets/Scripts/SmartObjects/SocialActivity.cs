@@ -38,6 +38,13 @@ public class SocialActivity : Activity
             secondSim.GetComponent<NavMeshAgent>().SetDestination(transform.position);
         }
     }
+
+    public override void RestoreNavMeshRoute()
+    {
+        if (secondSim != null)
+            secondSim.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+        sim.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+    }
     public override void UpdateActivity()
     {
         if (activityStatus == ActivityStatus.WAITING && secondSim != null)

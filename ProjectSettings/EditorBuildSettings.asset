@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Casa1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Casa2.unity
+    guid: dba8736f62d1a084b99e191ff5607f63
+  - enabled: 1
+    path: Assets/Scenes/MainMenuNoMusic.unity
+    guid: 99eb7a89b7b6ce84b9f647cb6de5d4e2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 0b6bad1e271121e46af63cfbfcd5ca39, type: 3}

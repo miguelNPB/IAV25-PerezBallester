@@ -11,7 +11,9 @@ public class PlayerActions : MonoBehaviour
     public enum Mode { None, Move, Thunder, Gold }
 
     public List<GameObject> allSims;
-    public float thunderTime;
+    public float thunderTimeSim;
+    public float thunderTimeSmartObject;
+    public GameObject goldPrefab;
 
     private Mode mode;
     private GameObject selectedSim;
@@ -46,6 +48,13 @@ public class PlayerActions : MonoBehaviour
             selectedSimComponent.SendSimToUI();
 
         HandleChangeMode();
+        HandleEscape();
+    }
+
+    private void HandleEscape()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            UIManager.Instance.OpenEscapeButton();
     }
 
     private void HandleChangeMode()
@@ -182,17 +191,18 @@ public class PlayerActions : MonoBehaviour
         // mover
         if (Input.GetMouseButtonDown(0) && selectedSim != null && selectedSimComponent.currentActivity == null)
         {
-            if (!selectedSimComponent.playerMoving)
+            if (!selectedSimComponent.playerMoving && !selectedSimComponent.thundered && !selectedSimComponent.distracted)
             {
                 selectedSimComponent.playerMoving = true;
                 selectedSim.GetComponent<SimPersonality>().ExitFunMode();
             }
 
-            if (outlinedGameObject == null && Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Collide))
+            if (outlinedGameObject == null && Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Collide) && !selectedSimComponent.distracted && !selectedSimComponent.thundered)
             {
                 selectedSimNavAgent.SetDestination(hit.point);
             }
-            else if (outlinedGameObject != null && !outlinedGameObject.GetComponent<SmartObject>().occupied)
+            else if (outlinedGameObject != null && !outlinedGameObject.GetComponent<SmartObject>().occupied && !outlinedGameObject.GetComponent<SmartObject>().thundered && 
+                !selectedSimComponent.distracted && !selectedSimComponent.thundered)
             {
                 Activity a = outlinedGameObject.GetComponent<SmartObject>().GetBestActivity(selectedSimComponent);
 
@@ -229,7 +239,13 @@ public class PlayerActions : MonoBehaviour
 
     private void HandleGold()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Collide))
+        {
+            Instantiate(goldPrefab, hit.point + new Vector3(0, 0.15f, 0), Quaternion.identity);
+        }
     }
 
     private void HandleThunder()
@@ -237,13 +253,41 @@ public class PlayerActions : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Player"), QueryTriggerInteraction.Collide) 
-            && hit.collider.gameObject.GetComponent<SimComponent>().currentActivity == null && hit.collider.gameObject.GetComponent<SimComponent>().queuedActivity == null)
+        // seleccionar smartObject
+        if (Physics.Raycast(ray, out hit, 100f) && hit.collider.gameObject.tag == "SmartObject")
         {
-            hit.collider.gameObject.GetComponent<SimPersonality>().ExitFunMode();
-            hit.collider.gameObject.GetComponent<SimComponent>().Thunder(thunderTime);
+            if (outlinedGameObject == null)
+            {
+                outlinedGameObject = hit.collider.gameObject.transform.parent.gameObject;
 
-            UIManager.Instance.ThunderAnimation();
+                SetLayerRecursively(hit.collider.gameObject, LayerMask.NameToLayer("OutlinedObject"));
+            }
+
+        }
+        else if (outlinedGameObject != null)
+        {
+            SetLayerRecursively(outlinedGameObject, LayerMask.NameToLayer("Default"));
+
+            outlinedGameObject = null;
+        }
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Player"), QueryTriggerInteraction.Collide) && 
+                hit.collider.gameObject.GetComponent<SimComponent>().currentActivity == null && hit.collider.gameObject.GetComponent<SimComponent>().queuedActivity == null)
+            {
+                hit.collider.gameObject.GetComponent<SimPersonality>().ExitFunMode();
+                hit.collider.gameObject.GetComponent<SimComponent>().Thunder(thunderTimeSim);
+
+                UIManager.Instance.ThunderAnimation();
+            }
+            else if (outlinedGameObject != null && !outlinedGameObject.GetComponent<SmartObject>().occupied)
+            {
+                outlinedGameObject.GetComponent<SmartObject>().Thunder(thunderTimeSmartObject);
+
+                UIManager.Instance.ThunderAnimation();
+            }
         }
     }
 

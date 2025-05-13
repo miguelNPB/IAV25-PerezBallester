@@ -5262,7 +5262,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 015c6e942ec450f41a963a71dfbac957, type: 3}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: sleepDepletionTime
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: customOcioAnimation
@@ -5270,7 +5270,7 @@ PrefabInstance:
       objectReference: {fileID: 7400000, guid: 146862a7f31a405429b2c4a909775fd6, type: 2}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: hungerDepletionTime
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: socialDepletionTime
@@ -5278,7 +5278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: bladderDepletionTime
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: ocioSpots.Array.size
@@ -5415,16 +5415,16 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(426.2093,3.552353)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-3.79071045,123.552353)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":1},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,140)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CheckSimAutoMode","NodeData":{"Offset":"(-133.79071,193.552368)","Comment":"Comprueba
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(426.2093,3.552353)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-3.79071045,123.552353)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":1},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,140)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CheckSimAutoMode","NodeData":{"Offset":"(-121.29071,193.552368)","Comment":"Comprueba
         si el sim\nest\u00e1 siendo controlado\npor acciones del jugador"},"ID":3,"Name":"Check
         Sim Auto Mode","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.PrioritySelector","NodeData":{"Offset":"(191.162766,203.2558)","Comment":"Elegir
         por prioridad"},"ID":4,"Name":"Priority Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CheckQueuedActivity","NodeData":{"Offset":"(-591.8656,201.010132)"},"ID":5,"Name":"Check
         Queued Activity","Instant":true,"SharedGameObjectsimGameobject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":1}},{"Type":"CheckSharedSmartObjectGroup","NodeData":{"Offset":"(-387.6425,197.913208)","Comment":"Social\n"},"ID":6,"Name":"Check
-        Shared Smart Object Group","Instant":true,"SharedGameObjectListallSims":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":"AllSims","IsShared":true,"List`1mValue":[2,3]},"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":4},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SocialSmartObjectGroup","IsShared":true,"GameObjectmValue":5},"SharedFloatminRemainingActivityTimeToReserveSim":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3}},{"Type":"CheckAloneSmartObjectGroup","NodeData":{"Offset":"(-161.572754,197.913269)","Comment":"Hunger"},"ID":7,"Name":"Check
-        Alone Smart Object Group","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":6},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HungerSmartObjectGroup","IsShared":true,"GameObjectmValue":7}},{"Type":"CheckAloneSmartObjectGroup","NodeData":{"Offset":"(64.49707,197.912964)","Comment":"Bladder"},"ID":8,"Name":"Check
-        Alone Smart Object Group","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":8},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"BladderSmartObjectGroup","IsShared":true,"GameObjectmValue":9}},{"Type":"CheckAloneSmartObjectGroup","NodeData":{"Offset":"(277.053223,197.913025)","Comment":"Sleep\n"},"ID":9,"Name":"Check
-        Alone Smart Object Group","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":10},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SleepSmartObjectGroup","IsShared":true,"GameObjectmValue":11}},{"Type":"CheckFunTask","NodeData":{"Offset":"(447.192657,203.691086)","Comment":"Modo
-        ocio\n"},"ID":10,"Name":"Check Fun Task","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":12}}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":13},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HungerSmartObjectGroup","IsShared":true,"GameObjectmValue":14},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"BladderSmartObjectGroup","IsShared":true,"GameObjectmValue":15},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SocialSmartObjectGroup","IsShared":true,"GameObjectmValue":16},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SleepSmartObjectGroup","IsShared":true,"GameObjectmValue":17},{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":"AllSims","IsShared":true,"List`1mValue":[18,19]}]}'
+        Shared Smart Object Group","Instant":true,"SharedGameObjectListallSims":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":"AllSims","IsShared":true,"List`1mValue":[null,2]},"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":3},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SocialSmartObjectGroup","IsShared":true},"SharedFloatminRemainingActivityTimeToReserveSim":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3}},{"Type":"CheckAloneSmartObjectGroup","NodeData":{"Offset":"(-161.572754,197.913269)","Comment":"Hunger"},"ID":7,"Name":"Check
+        Alone Smart Object Group","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":4},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HungerSmartObjectGroup","IsShared":true}},{"Type":"CheckAloneSmartObjectGroup","NodeData":{"Offset":"(64.49707,197.912964)","Comment":"Bladder"},"ID":8,"Name":"Check
+        Alone Smart Object Group","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":5},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"BladderSmartObjectGroup","IsShared":true}},{"Type":"CheckAloneSmartObjectGroup","NodeData":{"Offset":"(277.053223,197.913025)","Comment":"Sleep\n"},"ID":9,"Name":"Check
+        Alone Smart Object Group","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":6},"SharedGameObjectsmartObjectGroupGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SleepSmartObjectGroup","IsShared":true}},{"Type":"CheckFunTask","NodeData":{"Offset":"(447.192657,203.691086)","Comment":"Modo
+        ocio\n"},"ID":10,"Name":"Check Fun Task","Instant":true,"SharedGameObjectsimGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":7}}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SimGameobject","IsShared":true,"GameObjectmValue":8},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HungerSmartObjectGroup","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"BladderSmartObjectGroup","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SocialSmartObjectGroup","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SleepSmartObjectGroup","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":"AllSims","IsShared":true,"List`1mValue":[null,9]}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -5433,23 +5433,13 @@ MonoBehaviour:
         unityObjects:
         - {fileID: 5855979183898074178}
         - {fileID: 5855979183898074178}
-        - {fileID: 0}
         - {fileID: 5855979183898074178}
         - {fileID: 5855979183898074178}
-        - {fileID: 0}
-        - {fileID: 5855979183898074178}
-        - {fileID: 0}
-        - {fileID: 5855979183898074178}
-        - {fileID: 0}
-        - {fileID: 5855979183898074178}
-        - {fileID: 0}
         - {fileID: 5855979183898074178}
         - {fileID: 5855979183898074178}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 5855979183898074178}
+        - {fileID: 5855979183898074178}
+        - {fileID: 5855979183898074178}
         - {fileID: 5855979183898074178}
         byteData: 
         byteDataArray: 

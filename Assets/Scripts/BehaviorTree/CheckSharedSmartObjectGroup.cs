@@ -37,7 +37,7 @@ public class CheckSharedSmartObjectGroup : Action
                 if (candidateSim != sim && (candidateSim.currentActivity == null || candidateSim.currentActivity.timer < minRemainingActivityTimeToReserveSim.Value))
                 {
                     // comprobar si el candidato tiene algo de prioridad en la necesidad que suple la actividad
-                    if (candidateSim.getPriority(sim.currentActivity.necessity) > 0 && sim.currentActivity.getActivityScore(candidateSim) > bestScore)
+                    if (candidateSim.getNecessityDepletion(sim.currentActivity.necessity) < 0.85f && sim.currentActivity.getActivityScore(candidateSim) > bestScore)
                     {
                         otherSim = candidateSim;
                         bestScore = sim.currentActivity.getActivityScore(candidateSim);
