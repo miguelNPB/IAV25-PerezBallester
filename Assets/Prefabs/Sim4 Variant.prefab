@@ -65,37 +65,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 220342332443382938}
   m_LocalEulerAnglesHint: {x: -28.569092, y: 0, z: 0}
---- !u!1 &1033960240553341856
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3210150305585403297}
-  m_Layer: 6
-  m_Name: JavierOcioSpot2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3210150305585403297
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033960240553341856}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7300003, y: 0, z: 0.30999947}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3399016509043308637}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417996583481614163
 GameObject:
   m_ObjectHideFlags: 0
@@ -5087,37 +5056,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 220342332443382938}
   m_LocalEulerAnglesHint: {x: -11.430927, y: 0, z: 0}
---- !u!1 &6038771928463107522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4262844695183112568}
-  m_Layer: 6
-  m_Name: JavierOcioSpot1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4262844695183112568
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6038771928463107522}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6500001, y: 0, z: 4.3199997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3399016509043308637}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7366111985068821199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,14 +5445,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      propertyPath: ocioSpots.Array.data[0]
-      value: 
-      objectReference: {fileID: 4262844695183112568}
-    - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      propertyPath: ocioSpots.Array.data[1]
-      value: 
-      objectReference: {fileID: 3210150305585403297}
-    - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: ocioAnimationProps.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5619,12 +5549,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5033700971815933615, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7368626623192292791}
-    - targetCorrespondingSourceObject: {fileID: 5033700971815933615, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4262844695183112568}
-    - targetCorrespondingSourceObject: {fileID: 5033700971815933615, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3210150305585403297}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7694236973481782634, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       insertIndex: -1

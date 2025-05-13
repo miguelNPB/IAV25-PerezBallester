@@ -516,6 +516,7 @@
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Transform\SetParent.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetAngularDrag.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Vector3\GetRightVector.cs" />
+    <Compile Include="Assets\Scripts\Other\ChangeScene.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\Animator\SetApplyRootMotion.cs" />
     <Compile Include="Assets\BehaviorDesigner\Behavior Designer\Runtime\Tasks\Unity\GameObject\ActiveInHierarchy.cs" />
     <Compile Include="Assets\Scripts\Sims\DiamondComponent.cs" />

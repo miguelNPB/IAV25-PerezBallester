@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SmartObject : MonoBehaviour
 {
-    [SerializeField] protected List<Activity> activities;
+    public List<Activity> activities;
     protected Activity runningActivity;
     [HideInInspector]
     public bool occupied;

@@ -104,11 +104,30 @@ public class PlayerActions : MonoBehaviour
     }
     private void HandleSelectSim()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        // seleccionar smartObject
+        if (Physics.Raycast(ray, out hit, 100f) && hit.collider.gameObject.tag == "SmartObject")
+        {
+            if (outlinedGameObject == null)
+            {
+                outlinedGameObject = hit.collider.gameObject.transform.parent.gameObject;
+
+                SetLayerRecursively(hit.collider.gameObject, LayerMask.NameToLayer("OutlinedObject"));
+            }
+
+        }
+        else if (outlinedGameObject != null)
+        {
+            SetLayerRecursively(outlinedGameObject, LayerMask.NameToLayer("Default"));
+
+            outlinedGameObject = null;
+        }
+
+
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
             if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Player"), QueryTriggerInteraction.Collide))
             {
                 if (selectedSim != null)
@@ -119,10 +138,17 @@ public class PlayerActions : MonoBehaviour
                 selectedSimNavAgent = selectedSim.GetComponent<NavMeshAgent>();
                 selectedSimComponent.toggleDiamondAnimation(true);
             }
-            else if (mode == Mode.None && selectedSim != null)
+            else if (Physics.Raycast(ray, out hit, 100f) && hit.collider.gameObject.tag == "SmartObject")
             {
-                selectedSimComponent.toggleDiamondAnimation(false);
-                UIManager.Instance.HideSimUI();
+                UIManager.Instance.ChangeSmartObjectUI(hit.collider.gameObject.GetComponentInParent<SmartObject>());
+            }
+            else if (mode == Mode.None)
+            {
+                if (selectedSim != null)
+                {
+                    selectedSimComponent.toggleDiamondAnimation(false);
+                }
+                UIManager.Instance.HideUI();
                 selectedSim = null;
                 selectedSimComponent = null;
                 selectedSimNavAgent = null;
@@ -216,7 +242,8 @@ public class PlayerActions : MonoBehaviour
         {
             hit.collider.gameObject.GetComponent<SimPersonality>().ExitFunMode();
             hit.collider.gameObject.GetComponent<SimComponent>().Thunder(thunderTime);
-            // animacion thunder
+
+            UIManager.Instance.ThunderAnimation();
         }
     }
 

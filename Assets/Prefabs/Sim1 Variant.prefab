@@ -188,37 +188,6 @@ Transform:
   - {fileID: 3697349348589926629}
   m_Father: {fileID: 7165373737582685908}
   m_LocalEulerAnglesHint: {x: -0, y: 0, z: 0}
---- !u!1 &4040743441270041881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 357948531447761833}
-  m_Layer: 6
-  m_Name: LuciaOcioSpot2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &357948531447761833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4040743441270041881}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.35, y: 0, z: -6.1099997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9104230697689540487}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4671826011084576883
 GameObject:
   m_ObjectHideFlags: 0
@@ -5240,37 +5209,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.19234169, z: -0.0615568}
     m_Extent: {x: 0.38358414, y: 0.1923416, z: 0.17191654}
   m_DirtyAABB: 0
---- !u!1 &6678921711605345859
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4552571006879867706}
-  m_Layer: 6
-  m_Name: LuciaOcioSpot1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4552571006879867706
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6678921711605345859}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0, z: -4.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9104230697689540487}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8506461005204417692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,14 +5284,6 @@ PrefabInstance:
       propertyPath: ocioSpots.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      propertyPath: ocioSpots.Array.data[0]
-      value: 
-      objectReference: {fileID: 4552571006879867706}
-    - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      propertyPath: ocioSpots.Array.data[1]
-      value: 
-      objectReference: {fileID: 357948531447761833}
     - target: {fileID: 4408508989492392669, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       propertyPath: ocioAnimationProps.Array.size
       value: 1
@@ -5444,12 +5374,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5033700971815933615, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5301111806496035140}
-    - targetCorrespondingSourceObject: {fileID: 5033700971815933615, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 357948531447761833}
-    - targetCorrespondingSourceObject: {fileID: 5033700971815933615, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4552571006879867706}
     - targetCorrespondingSourceObject: {fileID: 5033700971815933615, guid: bc6fd9e8c1f2b8a4dbddc92b3a384c75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8207735778081039348}

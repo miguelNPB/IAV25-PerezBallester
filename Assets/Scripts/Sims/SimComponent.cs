@@ -22,7 +22,8 @@ public class SimComponent : MonoBehaviour
     public bool playerMoving;
     [HideInInspector]
     public bool distracted;
-    private bool thundered;
+    [HideInInspector]
+    public bool thundered;
     private float thunderTimer;
     [HideInInspector]
     public bool enableAutoModeOnActivityDone;
@@ -37,7 +38,7 @@ public class SimComponent : MonoBehaviour
     }
     public void SendSimToUI()
     {
-        UIManager.Instance.ChangeSimUI(spriteFace, name, hunger, bladder, social, sleep);
+        UIManager.Instance.ChangeSimUI(this);
     }
     public int getPriority(Necessity n)
     {
@@ -98,6 +99,11 @@ public class SimComponent : MonoBehaviour
         navMeshAgent.velocity = new Vector3(0, 0, 0);
         navMeshAgent.SetDestination(transform.position);
         thunderedParticleSystem.SetActive(true);
+
+        hunger -= 0.1f;
+        bladder -= 0.1f;
+        social -= 0.1f;
+        sleep -= 0.1f;
     }
 
     void Start()
