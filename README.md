@@ -49,7 +49,18 @@ El jugador puede clicar sobre cualquier sim para ver sus estadísticas y nombre.
 - Activar modo colocar oro: 2
 - Activar modo rayo: 3
 
-## Conclusiones
+# Pruebas y métricas 
+- Ver como los sims rellenan sus necesidades solos
+- Ver que pasan a modo ocio cuando tienen todas sus necesidades repletas
+- Ver que funcionan los controles de jugador para mover sims
+- Ver que funciona el rayo para desactivar sims y SmartObjects
+- Ver que funciona el lingote de oro
+- Ver como hacen una tarea de socializar cuando 1 sim tiene menos de 75% de social y otro está disponible con menos de 85% de social
+- Ver como los sims pasan a modo berrear cuando tienen una necesidad pendiente y no tienen estación disponible
+
+Ver el video adjuntado en el repo ProyectoFinalIA_MiguelNorbertoPerezBallester.mp4
+
+# Conclusiones
 
 Ha sido divertido crear este simulador de los sims.
 He notado que gracias al sistema de SmartObjects el juego es muchísimo más escalable que creandolo sin este sistema, y se podrían añadir nuevas necesidades, actividades y sims con muchísima facilidad.
