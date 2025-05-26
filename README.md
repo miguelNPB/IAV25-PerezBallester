@@ -10,7 +10,19 @@ El jugador también puede interactuar con ellos tirando rayos al suelo, asustand
 
 Se ha utilizado Behavior Designer para diseñar los árboles de comportamiento de los NPC, y se ha utilizado los "Smart Objects"
 
+# Punto de partida
+
+De cero
+
 # Diseño
+
+#### Apartados
+
+- A: Los sims buscan un SmartObject y rellenan sus necesidades si lo necesitan
+- B: Se puede mover sims y colocar lingotes de oro que les atraen, y el rayo deshabilita y aturde sims y deshabilita SmartObjects
+- C: Los sims elijen el SmartObject en función de su prioridad de necesidad, si no pueden rellenar la más prioritaria, van a la siguiente y así.
+- D: Los sims pasan a modo ocio si tienen sus necesidades cubiertas y pasan a modo berrear si no pueden cubrirlas
+- E: Los sims buscan a otros libres o con condiciones de socializar bajas para hacer las tareas de ocio
 
 #### Smart Objects
 Los "Smart Objects" son objetos del entorno que contienen comportamiento para dar al NPC que decida actuar sobre ellos, manejan que animaciones reproducir, cuanto tiempo estar interactuando, que recompensar dar, etc.  
@@ -71,5 +83,7 @@ Este proyecto incluye recursos bajo licencia Creative Commons Attribution 4.0 In
 
 ## Referencias
 Los recursos de terceros utilizados son de uso público.
+* Assets sacados de https://poly.pizza/, animados por mí.  
+* Conocimiento de SmartObjects obtenido de https://www.gamedevpensieve.com/ai/ai_knowledge/ai_knowledge_smart-objects
 * Plantilla URP 3D, incluida en Unity 2022.3.40f1
 * Behavior Designer 1.7.12, incluyendo Tutorials y Samples descargados desde la web de Opsive
